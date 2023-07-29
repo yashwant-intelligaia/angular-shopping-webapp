@@ -1,0 +1,24 @@
+<div class="container" novalidate>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form" autocomplete="off">
+    <mat-form-field class="form-element">
+      <mat-label autocomplete="off">Email</mat-label>
+      <input matInput formControlName="email" placeholder="Enter your email: abc@gmail.com">
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" autocomplete="off" placeholder="Enter your password: 123456">
+    </mat-form-field>
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Login</button>
+    </div>
+  </form>
+</div>
+
+<div class="container" *ngIf="validCredential; else invalid">
+  <div>Login Success</div>
+  {{formData | json}}
+</div>
+
+<ng-template #invalid>
+  <div *ngIf="validCredential!==undefined">Invalid Credential</div>
+</ng-template>

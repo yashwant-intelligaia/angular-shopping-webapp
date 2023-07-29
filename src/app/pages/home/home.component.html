@@ -1,0 +1,16 @@
+<div class="listing-section">
+  <div class="product" *ngFor="let product of products">
+    <div class="image-box">
+      <div class="images">
+        <img src="{{product.src}}" style="max-width: 400px; height: 300px;"/>
+      </div>
+    </div>
+    <div class="text-box">
+      <h2 class="item">{{product.name}}</h2>
+      <h3 class="price">${{product.price}}</h3>
+      <p class="description">{{product.description}}</p>
+      <label for="item-1-quantity">Quantity:</label>
+      <button type="button" name="item-1-button" id="item-1-button" style="cursor: pointer;">Add to Cart</button>
+    </div>
+  </div>
+</div>
