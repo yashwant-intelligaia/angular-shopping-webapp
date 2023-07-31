@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { data as products } from 'src/app/mocks/products';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductDataType } from 'src/app/types/product';
 import {
   addCartItem,
@@ -17,12 +18,14 @@ interface FilteredProductDataType extends ProductDataType {
 })
 export class HomeComponent {
   filteredProducts: FilteredProductDataType[] = [];
-  constructor() {
+  constructor(private cart: CartService) {
     this.handleUpdateList();
   }
 
   handleUpdateList() {
-    const cartItemIds = fetchCartItems().map(({ id }) => id);
+    const cartItems = fetchCartItems();
+    this.cart.setCartItems(cartItems);
+    const cartItemIds = cartItems.map(({ id }) => id);
     this.filteredProducts = products.map((data) => {
       return {
         ...data,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { CartItemDataType } from 'src/app/types/product';
 import { fetchCartItems, removeCartItem } from 'src/app/utils/storage';
 
@@ -10,16 +11,18 @@ import { fetchCartItems, removeCartItem } from 'src/app/utils/storage';
 export class CartComponent {
   items: CartItemDataType[] = [];
   total: number = 0;
-  constructor() {
+  constructor(private cart: CartService) {
     this.updateItems();
   }
 
   updateItems() {
-    this.items = fetchCartItems();
+    const cartItems = fetchCartItems();
     let newTotal = 0;
-    this.items.forEach(({ quantity, price }) => {
+    cartItems.forEach(({ quantity, price }) => {
       newTotal += quantity * price;
     });
+    this.cart.setCartItems(cartItems);
+    this.items = cartItems;
     this.total = newTotal;
   }
 
