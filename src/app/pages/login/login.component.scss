@@ -1,5 +1,21 @@
 .container {
-  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }
 
 .form {
