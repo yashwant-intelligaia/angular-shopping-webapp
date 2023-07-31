@@ -215,7 +215,7 @@ button:active {
   width: 60%;
 }
 
-.cart-quantity input {
+.cart-quantity h3 {
   margin: 3.2em 1%;
   border: none;
 }
@@ -230,7 +230,7 @@ button:active {
 .coupon {
   width: 20%;
   background-color: #dfd;
-  margin: 1% 1% 1% 12.25%;
+  margin: 1% 0% 1% 12.25%;
   float: left;
   height: 6em;
 }
@@ -238,7 +238,7 @@ button:active {
 .coupon input {
   width: 60%;
   border: none;
-  margin: 12.75% 5%;
+  margin: 12.75% 0% 12.75% 1%;
   padding: 1%;
 }
 
@@ -265,7 +265,7 @@ button:active {
 }
 
 .checkout {
-  width: 37.25%;
+  width: 15%;
   margin: 1% 12.75% 1% 1%;
   float: right;
   background-color: #dfd;
@@ -282,8 +282,8 @@ button:active {
 .final-cart-total {
   width: 15%;
   float: right;
-  margin: 7%;
-  background-color: White;
+  margin: 7% 50%;
+  // background-color: White;
 }
 
 .final-cart-total h3 {

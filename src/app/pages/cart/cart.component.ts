@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductDataType } from 'src/app/types/product';
+import { CartItemDataType } from 'src/app/types/product';
+import { fetchCartItems, removeCartItem } from 'src/app/utils/storage';
 
 @Component({
   selector: 'app-cart',
@@ -7,8 +8,23 @@ import { ProductDataType } from 'src/app/types/product';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent {
-  items: ProductDataType[] = [];
+  items: CartItemDataType[] = [];
+  total: number = 0;
   constructor() {
-    this.items = JSON.parse(localStorage.getItem('ITEMS') || '[]');
+    this.updateItems();
+  }
+
+  updateItems() {
+    this.items = fetchCartItems();
+    let newTotal = 0;
+    this.items.forEach(({ quantity, price }) => {
+      newTotal += quantity * price;
+    });
+    this.total = newTotal;
+  }
+
+  handleRemoveItem(id: number) {
+    removeCartItem(id);
+    this.updateItems();
   }
 }
