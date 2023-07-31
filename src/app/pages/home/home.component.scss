@@ -126,11 +126,19 @@ label {
   margin-top: 1em;
 }
 
-button {
+.button-success {
   padding: 2%;
   background-color: #dfd;
   border: none;
   border-radius: 2%;
+  cursor: pointer;
+}
+.button-error {
+  padding: 2%;
+  background-color: #ec9aa8;
+  border: none;
+  border-radius: 2%;
+  cursor: pointer;
 }
 
 button:hover {

@@ -1,5 +1,5 @@
 <div class="listing-section">
-  <div class="product" *ngFor="let product of products">
+  <div class="product" *ngFor="let product of filteredProducts">
     <div class="image-box">
       <div class="images">
         <img src="{{product.src}}" style="max-width: 400px; height: 300px;"/>
@@ -10,7 +10,10 @@
       <h3 class="price">${{product.price}}</h3>
       <p class="description">{{product.description}}</p>
       <label for="item-1-quantity">Quantity:</label>
-      <button type="button" name="item-1-button" id="item-1-button" style="cursor: pointer;">Add to Cart</button>
+      <button *ngIf="!product.isInCart; else removeItem" type="button" name="item-1-button" id="item-1-button" class="button-success" (click)="handleAddProductToCart(product.id)">Add to Cart</button>
+      <ng-template #removeItem>
+        <button type="button" name="item-1-button" id="item-1-button" class="button-error" (click)="handleRemoveProductFromCart(product.id)">Remove</button>
+      </ng-template>
     </div>
   </div>
 </div>
