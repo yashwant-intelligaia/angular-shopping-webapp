@@ -50,27 +50,6 @@
   border-radius: 2%;
 }
 
-/* IMAGES */
-#image-1 {background-image: url("https://sc01.alicdn.com/kf/UT8.CaXX2NXXXagOFbXC/fresh-navel-oranges.jpg");}
-
-#image-2 {background-image: url("https://newenglandapples.files.wordpress.com/2014/10/img_5595.jpg")}
-
-#image-3 {background-image: url("https://sc01.alicdn.com/kf/UT8ovSIXQNaXXagOFbXt/Fresh-Passion-Fruit-with-Best-Price-and.jpg")}
-
-#image-4 {background-image: url("http://www.foodmatters.com/media/images/articles/16-powerful-reasons-to-eat-pineapple.jpg")}
-
-#image-5 {background-image: url("http://membrillo.com.au/wp-content/uploads/2016/11/bg-mango-01.jpg")}
-
-#image-6 {background-image: url("http://ell.h-cdn.co/assets/16/27/980x490/landscape-1467750721-gettyimages-146896572.jpg")}
-
-#image-7 {background-image: url("http://www.hesca.org/wp-content/uploads/2016/08/banana.jpg")}
-
-#image-8 {background-image: url("http://www.baag.com.au/pictures/produce/plums2.jpg")}
-
-#image-9 {background-image: url("https://ecowatchroar-img.rbl.ms/simage/https%3A%2F%2Fassets.rbl.ms%2F9458277%2F1200x600.jpg/2000%2C2000/J9vl96eLQCOEy3Xy/img.jpg")}
-
-#image-10 {background-image: url("https://www.parhlo.com/wp-content/uploads/2016/04/Valencia_market_-_lemons-1940x1454.jpg")}
-
 .text-box {
   width: 100%;
   float: left;
@@ -98,7 +77,12 @@ h2, h3 {
   color: Grey;
 }
 
-.description, label, button, input {
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 40px;
   float: left;
   clear: left;
   width: 100%;
@@ -107,19 +91,18 @@ h2, h3 {
   font-size: 1em;
   text-align: center;
   margin: 0.2em auto;
+  overflow: hidden;
 }
 
-input:focus {
-  outline-color: #fdf;
-}
-
-label {
-  width: 60%;
-}
-
-.text-box input {
-  width: 15%;
-  clear: none;
+button {
+  float: left;
+  clear: left;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  margin: 0.2em auto;
 }
 
 .text-box button {
