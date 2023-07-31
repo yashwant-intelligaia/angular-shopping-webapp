@@ -31,7 +31,11 @@ export class LoginComponent {
     if (data.email === 'abc@gmail.com' && data.password === '123456') {
       this.validCredential = true;
       setTimeout(() => {
-        this.router.navigate(['/home']);
+        localStorage.setItem(
+          'token',
+          'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoidXNlciIsInVzZXJfaWQiOiIxIiwibmFtZSI6IkFCQyJ9.1Yv4pcysjHS7rYAItIkfTobh78ZZFYo-b8Xsf0bXbwY'
+        );
+        this.router.navigate(['/']);
       }, 1500);
     } else {
       this.validCredential = false;

@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   constructor(private router: Router) {}
-  handleVisitHomePage() {
-    this.router.navigate(['/']);
+
+  handleLogout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }
